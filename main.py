@@ -2,7 +2,8 @@
 # Zachary Rubin, zrubin@rtc.edu
 # CNA 337 Fall 2020
 
-import os
+from Server import Server
+
 
 def print_program_info():
     # TODO - Change your name
@@ -11,14 +12,11 @@ def print_program_info():
 # This is the entry point to our program
 if __name__ == '__main__':
     print_program_info()
-    # TODO - Create a Server object
-    IpAddress = '13.59.54.144'
-    responce = os.system('ping -n 4 ' + IpAddress)
-
-
-    # TODO - Call Ping method and print the results
-    if responce == 0:
-        print()
-        print(IpAddress, 'is up!')
+    ec2_ip_address = "52.14.212.224"
+    server = Server(ec2_ip_address)
+    result = server.ping()
+    print(result)
+    if result == 0:
+        print("Server with ip [%s] is up." % ec2_ip_address)
     else:
-        print(IpAddress, 'is down!')
+        print("Server with ip [%s] is down." % ec2_ip_address)
