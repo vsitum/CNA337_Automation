@@ -7,7 +7,7 @@ from Server import Server
 
 def print_program_info():
     # TODO - Change your name
-    print("Server Automator v0.1 by Dorin Vozian")
+    print("Server Automator v0.1 by Vlado Situm")
 
 
 # This is the entry point to our program
